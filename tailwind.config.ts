@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        stamuraibg: "#212529",
+        stamuraitext: "#dae0e7",
+      },
     },
   },
   plugins: [],
