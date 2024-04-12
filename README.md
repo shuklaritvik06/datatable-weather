@@ -2,6 +2,11 @@
 
 This project is a web application built using Next.js framework. It serves as an assignment submission for Stamurai.
 
+![](./screenshots/Screenshot%20from%202024-04-13%2003-05-34.png)
+![](./screenshots/Screenshot%20from%202024-04-13%2003-06-14.png)
+![](./screenshots/Screenshot%20from%202024-04-13%2003-31-10.png)
+
+
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
@@ -36,7 +41,6 @@ To get a local copy up and running follow these simple steps.
 - Added the Weather forecast and current weather feature
 - Added the dropdown to select the unit
 - Bookmark the locations
-- History Saving
 - Automatic Location Detection
 
 ## Contributing
