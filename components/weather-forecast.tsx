@@ -179,6 +179,10 @@ const WeatherForecast = () => {
                   })}
                 </div>
               </div>
+              <div className="flex flex-col md:justify-between md:items-center md:flex-row gap-2 mt-2 text-gray-700 font-medium">
+                <div>Humidity: {currentData?.data?.main?.humidity} %</div>
+                <div>Pressure: {currentData?.data?.main?.pressure} hPa</div>
+              </div>
               <div className="my-5 text-2xl font-bold text-stamuraibg">
                 Forecast
               </div>

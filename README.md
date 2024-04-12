@@ -24,6 +24,21 @@ To get a local copy up and running follow these simple steps.
    ```
 5. Open your browser and go to `http://localhost:3000` to view the application.
 
+
+## Features
+
+- Added City Infinite Scroll Table
+- Added Filtering feature
+- Added the Sorting Feature. We can hover and click on column name to sort (Default is ASC)
+- Added the feature to select entries per page
+- Added the progress bar.
+- Added the dynamic background
+- Added the Weather forecast and current weather feature
+- Added the dropdown to select the unit
+- Bookmark the locations
+- History Saving
+- Automatic Location Detection
+
 ## Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
