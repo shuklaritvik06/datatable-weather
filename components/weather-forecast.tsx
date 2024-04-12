@@ -31,7 +31,7 @@ const WeatherForecast = () => {
             axios.get(`/api/weather/forecast?lat=${lat}&lon=${lon}`),
           ]);
           document.body.classList.add(
-            getBgColor(currentResponse?.data?.weather?.[0]?.main)
+            getBgColor(currentResponse?.data?.data?.weather?.[0]?.main)
           );
           setCurrentData(currentResponse.data);
           setForecastData(forecastResponse.data);
@@ -56,7 +56,7 @@ const WeatherForecast = () => {
         </div>
       ) : (
         <div className="w-full mx-3">
-          <div className="max-w-3xl w-full mx-auto mt-20 bg-white rounded p-8 md:p-9 shadow">
+          <div className="max-w-3xl w-full mx-auto mt-20 bg-white rounded p-8 md:p-9 shadow border">
             <div className="h-1/2 w-full">
               <div className="text-2xl md:text-3xl">
                 🌤️ Weather Data for{" "}
@@ -156,6 +156,73 @@ const WeatherForecast = () => {
                   Visibility: {currentData?.data?.visibility! / 1000} Km
                 </div>
                 <div>Timezone: {currentData?.data?.timezone} sec</div>
+              </div>
+              <div className="flex flex-col md:justify-between md:items-center md:flex-row gap-2 mt-2 text-gray-700 font-medium">
+                <div>
+                  Sunrise:{" "}
+                  {new Date(
+                    forecastData?.data?.city?.sunrise!
+                  ).toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                  })}
+                </div>
+                <div>
+                  Sunset:{" "}
+                  {new Date(
+                    forecastData?.data?.city?.sunset!
+                  ).toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                  })}
+                </div>
+              </div>
+              <div className="my-5 text-2xl font-bold text-stamuraibg">
+                Forecast
+              </div>
+              <div className="flex gap-3 whitespace-nowrap overflow-x-scroll mt-5 scroll-hide">
+                {forecastData &&
+                  forecastData.data.list.map((data, index) => (
+                    <div
+                      key={index}
+                      className="rounded-md shadow border p-2 min-w-[180px]"
+                    >
+                      <div className="flex justify-center">
+                        <Image
+                          loader={() =>
+                            "https://openweathermap.org/img/w/" +
+                            data?.weather?.[0]?.icon +
+                            ".png"
+                          }
+                          src={
+                            "https://openweathermap.org/img/w/" +
+                            data?.weather?.[0]?.icon +
+                            ".png"
+                          }
+                          alt=""
+                          width={0}
+                          height={0}
+                          className="w-14 h-14 object-cover"
+                        />
+                      </div>
+                      <div className="text-lg font-semibold text-stamuraibg my-3 text-center">
+                        {data.weather[0].main}
+                      </div>
+                      <div className="text-base font-light text-stamuraibg/80 my-3 text-center">
+                        {data.weather[0].description
+                          .split("")[0]
+                          .toUpperCase() + data.weather[0].description.slice(1)}
+                      </div>
+                      <div className="text-sm font-medium text-center">
+                        {data.dt_txt}
+                      </div>
+                      <div className="text-sm font-medium text-center my-2">
+                        Temp: <span>{convertTemp(data.main.temp, unit)}</span>
+                      </div>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
