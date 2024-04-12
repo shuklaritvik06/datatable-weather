@@ -56,7 +56,7 @@ const WeatherForecast = () => {
         </div>
       ) : (
         <div className="w-full mx-3">
-          <div className="max-w-3xl w-full mx-auto mt-20 bg-white rounded p-8 md:p-9 shadow border">
+          <div className="max-w-3xl w-full mx-auto mt-10 bg-white rounded p-8 md:p-9 shadow border">
             <div className="h-1/2 w-full">
               <div className="text-2xl md:text-3xl">
                 🌤️ Weather Data for{" "}
