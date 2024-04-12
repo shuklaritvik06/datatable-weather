@@ -5,6 +5,7 @@ This project is a web application built using Next.js framework. It serves as an
 ![](./screenshots/Screenshot%20from%202024-04-13%2003-05-34.png)
 ![](./screenshots/Screenshot%20from%202024-04-13%2003-06-14.png)
 ![](./screenshots/Screenshot%20from%202024-04-13%2003-31-10.png)
+![](./screenshots/Screenshot%20from%202024-04-13%2003-53-45.png)
 
 
 ## Getting Started
