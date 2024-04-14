@@ -30,8 +30,10 @@ const WeatherForecast = () => {
             axios.get(`/api/weather/current?lat=${lat}&lon=${lon}`),
             axios.get(`/api/weather/forecast?lat=${lat}&lon=${lon}`),
           ]);
-          document.querySelectorAll("[class^='bg-']").forEach(element => {
-            element.classList.remove(element.className);
+          document.body.classList.forEach(element => {
+          if (element.startsWith("bg-")) {
+            document.body.classList.remove(element);
+          }
           });
           document.body.classList.add(
             getBgColor(currentResponse?.data?.data?.weather?.[0]?.main)
