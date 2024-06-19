@@ -1,4 +1,4 @@
-# Stamurai Assignment
+# Weather Datatable
 
 This project is a web application built using Next.js framework. It serves as an assignment submission for Stamurai.
 
